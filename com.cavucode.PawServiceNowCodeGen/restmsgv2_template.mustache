@@ -1,0 +1,28 @@
+//{{request.name}} - RESTMessageV2 request generated from Paw
+try {
+  var rm = new sn_ws.RESTMessageV2();
+  rm.setHttpMethod("{{{request.method}}}");
+  rm.setEndpoint("{{{request.urlBase}}}");
+
+  {{#header_list}}
+  rm.setRequestHeader('{{name}}','{{{value}}}');
+  {{/header_list}}
+
+  {{#parm_list}}
+  rm.setQueryParameter('{{name}}','{{value}}');
+  {{/parm_list}}
+
+  {{#body}}
+  rm.setRequestBody('{{{body}}}');
+  {{/body}}
+
+  var response = rm.execute();
+  var responseBody = response.getBody();
+  var httpStatus = response.getStatusCode();
+  gs.debug("httpStatus: {0}", httpStatus);
+  gs.debug("responseBody: {0}", responseBody);
+
+}
+catch(ex) {
+  gs.error("{{request.name}} REST error", ex);
+}
