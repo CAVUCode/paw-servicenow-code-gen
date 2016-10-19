@@ -14,7 +14,6 @@ var PawServiceNowCodeGen = function() {
 
             // iterate on request headers
             var headers = request.headers;
-            console.log(headers);
             var headerList = [];
             for (var header_name in headers) {
                 var h = {};
@@ -25,10 +24,8 @@ var PawServiceNowCodeGen = function() {
 
             // iterate on query parms
             var parms = request.getUrlParameters();
-            console.log(parms);
             var parmList = [];
             for (var parm_name in parms) {
-                console.log("Parm: ", parm_name, parms[parm_name]);
                 var p = {};
                 p.name = parm_name;
                 p.value = parms[parm_name];
