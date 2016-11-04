@@ -1,6 +1,7 @@
 //{{request.name}} - RESTMessageV2 request generated from Paw
 try {
   var rm = new sn_ws.RESTMessageV2();
+  //rm.setLogLevel("all"); //istanbul outbound logging[all, elevated, basic]
   rm.setHttpMethod("{{{request.method}}}");
   rm.setEndpoint("{{{request.urlBase}}}");
 {{#header_list}}
